@@ -1,0 +1,38 @@
+[![Database: ODbL-1.0](https://img.shields.io/badge/database-ODbL--1.0-blue)](https://opendatacommons.org/licenses/odbl/1-0/)
+[![Database Contents: DbCL-1.0](https://img.shields.io/badge/database%20contents-DbCL--1.0-blue)](https://opendatacommons.org/licenses/dbcl/1-0/)
+[![Source Code: GPL-3.0-or-later](https://img.shields.io/badge/source%20code-GPL--3.0--or--later-blue)](https://www.gnu.org/licenses/gpl-3.0.html)
+
+The collaborative database of information relative to automotive.  
+The goal is to provide an easily updatable database for scantools and  
+fill the gap that makes open source solution weak.  
+What you can find specifically in this db:
+ - OBD DTCs; manufacturer specific, ecu specific, generic (eg P1000)
+ - UDS DTCs (eg. 0x0F4231)
+ - ECU information (manufacturer, model, version, mcu)
+ - Vehicle brand, version, engines
+ - and more !
+
+You can browse the database [online](https://autodiag2.github.io/tools/dtc_query/index.html)
+
+# Contributing
+The easiest way to contribute is to edit yaml files.
+for example [B1000.yml](/data/vehicle/acura/1/dtc/B1000.yml),
+don't forget to add your sources in the evidence section.
+Then with the manager the data will be compiled to sqlite.
+
+# Data manager
+[See](/manager/README.md) for installation
+
+# Using the data
+Compiled database are in [releases](https://github.com/autodiag2/database/releases)  
+
+- **Optimized SQLite database** (normalized schema with relationships, smallest disk footprint):  
+  [`ad_database.sqlite`](https://github.com/autodiag2/database/releases/latest/download/ad_database.sqlite)
+
+See [this](/doc/using_data.md) for more information
+
+## License
+
+- **Database** (`*.sqlite`, `*.yml`, `*.yaml`, `*.json`, `*.csv`, DTC definitions, vehicle metadata): **ODbL-1.0**
+- **Database contents**: **DbCL-1.0**
+- **Source code** (`*.py`, `*.sh`, SQL scripts, tooling): **GPL-3.0-or-later**
